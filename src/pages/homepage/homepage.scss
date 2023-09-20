@@ -1,0 +1,130 @@
+@mixin devices($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tiny {    
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media screen and (min-width: 801px) and (max-width: 900px){
+      @content;
+      
+    }
+  }
+  @if $breakpoint == Btablet {
+    @media screen and (min-width: 901px) and (max-width: 1000px){
+      @content;
+      
+    }
+  }
+} 
+.home{
+    box-sizing: border-box;
+    margin-top: 0;
+    padding-top: 0;
+    .image{
+        width: 100%;
+        height: 70vh;
+        margin-top: 0;
+        background-size: cover;
+        background-position: center;
+        @include devices(tiny){
+          height: 30vh;
+        }
+        @include devices(tablet){
+          height: 40vh;
+        }
+        @include devices(Btablet){
+          height: 40vh;
+        }
+
+        
+        .search-box{
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            padding-top: 20vh;
+            height: 70vh;
+            
+            text-align: center;
+            @include devices(tiny){
+              padding-top: 7vh;
+              width: 80%;
+            }
+            @include devices(tablet){
+              padding-top: 15vh;
+            }
+            @include devices(Btablet){
+              padding-top: 15vh;
+            }
+            
+            .form{
+              
+               width: 90%;
+               height: 5vh;
+               
+               @include devices(tablet){
+                width: 100%;
+                height: 4vh;
+                
+              }
+               @include devices(Btablet){
+                width: 100%;
+                height: 4vh;
+                
+              }
+            }
+            
+            .search{
+                width: 100%;
+                height: 100%;
+                background-color: #ffffff;
+                border-radius: 20px;
+                border: 2px solid #3c00a0;
+                outline: none;
+                padding-left: 3%;
+
+                &::placeholder{
+                    font-size: 0.7rem;
+                    padding-bottom: 2vh;
+                }
+                @include devices(tablet){
+                  border-radius: 25px;
+                }
+                @include devices(Btablet){
+                  border-radius: 40px;
+                }
+            }
+            .search-icon{
+                
+                z-index: 1;
+                margin-left: -4%;
+                margin-bottom: -0.4vh;
+
+                &:hover{
+                  filter: invert(.6) sepia(1) saturate(5) hue-rotate(330deg);
+                }
+                @include devices(tiny){
+                  margin-left: -9%;
+                  margin-bottom: -0.4vh;
+                  
+                }
+                @include devices(tablet){
+                  position: absolute;
+                  top: 23.5vh;
+                }
+                @include devices(Btablet){
+                  margin-left: -9%;
+                }
+            }
+        }
+        
+    }
+    .results{
+      
+      margin-top: 10vh;
+      
+
+    }
+}

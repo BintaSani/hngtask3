@@ -1,0 +1,48 @@
+@mixin devices($breakpoint) { //the name of the mixin is devices
+  
+  @if $breakpoint == tiny {    
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media screen and (min-width: 801px) and (max-width: 900px){
+      @content;
+      
+    }
+  }
+  @if $breakpoint == Btablet {
+    @media screen and (min-width: 901px) and (max-width: 1000px){
+      @content;
+      
+    }
+  }
+} 
+
+.preview{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    
+    h3{
+      margin-left: 3.5%;
+    }
+    .preview-div{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      justify-content: space-evenly;
+      @include devices(tiny){
+        grid-template-columns: auto auto;
+      }
+
+      @include devices(tablet){
+        grid-template-columns: auto auto auto;
+      }
+
+      
+        // grid-template-columns: 1fr 1fr 1fr;
+        // column-gap: 10px;
+        // justify-content: space-between;
+    }
+    
+}

@@ -1,0 +1,46 @@
+@mixin devices($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tiny {    
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+  
+} 
+
+.container{
+    width: 20vw;
+    margin-bottom: 25vh;
+    
+    height: 60vh;
+    align-items: center;
+    margin-right: 10px;
+    @include devices(tiny){
+        margin-bottom: 1vh;
+      }
+    
+    
+    .image{
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+            &:hover{
+                opacity: 0.8
+            }
+        
+        // .image{
+        //     width: 100%;
+        //     height: 25vh;
+        //     background-size: cover;
+        //     background-position: center;
+        //     margin-bottom: 5px;
+            
+        //     &:hover{
+        //         opacity: 0.8
+        //     }
+        // }
+    }
+
+    
+}

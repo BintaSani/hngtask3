@@ -1,0 +1,68 @@
+@mixin devices($breakpoint) { //the name of the mixin is devices
+  
+    @if $breakpoint == tiny {    
+        @media screen and (max-width: 800px) {
+          @content;
+        }
+      }
+      @if $breakpoint == tablet {
+        @media screen and (min-width: 801px) and (max-width: 900px){
+          @content;
+          
+        }
+      }
+      @if $breakpoint == Btablet {
+        @media screen and (min-width: 901px) and (max-width: 1000px){
+          @content;
+          
+        }
+      }
+} 
+
+.sign-in{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    @include devices(tiny){
+        width: 85%;
+    }
+    @include devices(tablet){
+        width: 60%;
+    }
+    @include devices(Btablet){
+        width: 60%;
+    }
+    
+    
+    span{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    h2{
+        font-size: 30px;
+        font-weight: bolder;
+        
+        color: #3c00a0;
+    }
+
+    .form-box{
+        padding: 30px 60px 40px;
+
+
+        
+    }
+
+    .title{
+        margin: 10px 0;
+    }
+
+    .buttons {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
