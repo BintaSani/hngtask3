@@ -7,9 +7,8 @@ import './preview.scss';
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import { SortableContext, arrayMove, rectSwappingStrategy } from '@dnd-kit/sortable';
 
-const Preview = ({datas}) => {
-    console.log("paseed " + datas)
-    const [data, setData] = useState(datas !== undefined ? datas : IMAGE_DATA)
+const Preview = () => {
+    const [data, setData] = useState(IMAGE_DATA)
     const onDragEnd = e=>{
         const {active, over} = e;
         if(active.id === over.id){
@@ -24,7 +23,7 @@ const Preview = ({datas}) => {
 
     return(
         <div className='preview'>
-            <h3>tags: b, s, j and h</h3>
+            <h3>tags: bags, shoes, jewelries and hats</h3>
             <div className='preview-div'>
             <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
             <SortableContext items={data} strategy={rectSwappingStrategy}>
