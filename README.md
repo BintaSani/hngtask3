@@ -8,7 +8,7 @@
 
 -Open the terminal or command prompt and navigate to the directory where you want to store the React project.
 
--run git clone https://github.com/BintaSani/hngtask2.git
+-run git clone https://github.com/BintaSani/hngtask3.git
 
 -Navigate to the project directory: After the repository is cloned, navigate to the project directory using
 
