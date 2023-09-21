@@ -23,6 +23,16 @@
     display: flex;
     flex-direction: column;
     margin-top: 5vh;
+    margin-left: 5%;
+    @include devices(tiny){
+      margin-left: 6%;
+    }
+    @include devices(tablet){
+      margin-left: 2%;
+    }
+    @include devices(Btablet){
+      margin-left: 2.3%;
+    }
     
     h3{
       margin-left: 3.5%;
@@ -30,12 +40,15 @@
     .preview-div{
       display: grid;
       grid-template-columns: auto auto auto auto;
-      justify-content: space-evenly;
+      
       @include devices(tiny){
         grid-template-columns: auto auto;
       }
 
       @include devices(tablet){
+        grid-template-columns: auto auto auto;
+      }
+      @include devices(Btablet){
         grid-template-columns: auto auto auto;
       }
 
