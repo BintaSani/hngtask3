@@ -31,7 +31,7 @@ const HomePage = ( ) => {
    
     const filteredImages = data.filter(img=>
         img.tag.toLowerCase().includes(search.toLowerCase()));
-        console.log(filteredImages);
+        
     
         const onDragEnd = e=>{
             const {active, over} = e;

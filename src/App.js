@@ -1,10 +1,10 @@
-import { Routes, Route, Navigate } from 'react-router';
+import { Routes, Route, useNavigate } from 'react-router';
 import HomePage from './pages/homepage/homepage';
 import SignInPage from './pages/signinPage/signIn';
 import { auth } from './utils/firebase';
 import './App.css';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -14,7 +14,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         // User logged in
-        console.log(userAuth);
+        
         setUser(userAuth);
         
       } else {
@@ -25,7 +25,7 @@ function App() {
     });
 
     return unsubscribe;
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="App">
@@ -34,7 +34,7 @@ function App() {
         <Route exact path='/' Component={() => 
           //this.props.currentUser
           user ? (
-            <Navigate to='/home' replace/>
+            navigate('/home') 
           ) : (
             <SignInPage/>
           )} />
