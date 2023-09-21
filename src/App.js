@@ -4,10 +4,11 @@ import SignInPage from './pages/signinPage/signIn';
 import { auth } from './utils/firebase';
 import './App.css';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 function App() {
   const [user, setUser] = useState(null);
-
+  const navigate =useNavigate();
   useEffect(() => {
    
     const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
@@ -19,6 +20,7 @@ function App() {
       } else {
         // User logged out
         setUser(null);
+        navigate('/')
       }
     });
 

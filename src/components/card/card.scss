@@ -50,8 +50,11 @@
         height: 100%;
         background-position: center;
         background-size: cover;
+        transition: width 2s, height 2s, transform 2s;
+
             &:hover{
-                opacity: 0.8
+                opacity: 0.8;
+                transform: rotate(180deg);
             }
             
         

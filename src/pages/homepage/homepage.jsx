@@ -7,7 +7,10 @@ import Card from '../../components/card/card';
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import { SortableContext, arrayMove, rectSwappingStrategy } from '@dnd-kit/sortable'; 
 import LoadingSpinner from '../../components/spinner/spinner';
+
 import './homepage.scss';
+import CustomButton from '../../components/custom-button/custom-button.component';
+import { auth } from '../../utils/firebase';
 
 
 const HomePage = ( ) => {
@@ -15,7 +18,7 @@ const HomePage = ( ) => {
 
     const [data, setData] = useState([]);
     const [search, setSearch] = useState('');
-
+    
 
     setTimeout(() => setLoading(false), 6000);
     const news =IMAGE_DATA;
@@ -43,10 +46,25 @@ const HomePage = ( ) => {
         }
     
 
+        const signOut = async (e) => {
+            e.preventDefault();
+      
+            await auth.signOut().then(function() {
+              console.log("Successfully signed out.")
+      
+            }).catch(function(error) {
+              console.log(error)
+              console.log("An error occurred")
+            });
+      
+            
+          }
+
     return(
         
         <div className='home'>
             {loading === false ? (<>
+                
                 <div className='image' style={{
                     backgroundImage: `url(${"https://i.ibb.co/7QRc4tC/mybg.png"})`}}>
                     <div className='search-box'>
@@ -56,6 +74,9 @@ const HomePage = ( ) => {
                             <Search onClick={searchImages}/>
                         </form>
                     </div>
+                </div>
+                <div className='btn'>
+                    <CustomButton onClick={signOut} nav>Sign Out</CustomButton>
                 </div>
                 {loading === false ? (<>
                 <>{ search ? (
