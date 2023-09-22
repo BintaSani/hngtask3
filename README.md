@@ -33,7 +33,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 
 sign in credentials
-email: user@example.coom
+email: user@example.com
 password: 1Password
 
 The build is minified and the filenames include the hashes.
