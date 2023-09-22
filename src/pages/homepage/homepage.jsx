@@ -76,7 +76,7 @@ const HomePage = ( ) => {
                     </div>
                 </div>
                 <div className='btn'>
-                    <CustomButton onClick={signOut} nav>Sign Out</CustomButton>
+                    <CustomButton  onClick={signOut}>Sign Out</CustomButton>
                 </div>
                 {loading === false ? (<>
                 <>{ search ? (
