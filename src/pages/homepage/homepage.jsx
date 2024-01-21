@@ -67,6 +67,9 @@ const HomePage = ( ) => {
                 
                 <div className='image' style={{
                     backgroundImage: `url(${"https://i.ibb.co/7QRc4tC/mybg.png"})`}}>
+                    <div className='btn'>
+                        <CustomButton  onClick={signOut}>Sign Out</CustomButton>
+                    </div>
                     <div className='search-box'>
                         <h1>Explore Images</h1>
                         <form className='form' onSubmit={searchImages}>
@@ -75,9 +78,7 @@ const HomePage = ( ) => {
                         </form>
                     </div>
                 </div>
-                <div className='btn'>
-                    <CustomButton  onClick={signOut}>Sign Out</CustomButton>
-                </div>
+                
                 {loading === false ? (<>
                 <>{ search ? (
                 <div className='results'>

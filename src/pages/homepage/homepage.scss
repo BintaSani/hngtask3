@@ -23,22 +23,29 @@
     margin-top: 0;
     padding-top: 0;
     .image{
-        width: 100%;
-        height: 70vh;
-        margin-top: 0;
-        background-size: cover;
-        background-position: center;
-        @include devices(tiny){
-          height: 30vh;
-        }
-        @include devices(tablet){
-          height: 40vh;
-        }
-        @include devices(Btablet){
-          height: 40vh;
-        }
+      width: 100%;
+      height: 70vh;
+      margin-top: 0;
+      padding-top: 2vh;
+      background-size: cover;
+      background-position: center;
+      @include devices(tiny){
+        height: 30vh;
+      }
+      @include devices(tablet){
+        height: 40vh;
+      }
+      @include devices(Btablet){
+        height: 40vh;
+      }
 
-        
+      .btn{
+        width: 18%;
+        margin-left: 82%;
+        .btnn{
+          margin-right: 0;
+        }
+      }
         .search-box{
             width: 50%;
             margin-left: auto;
@@ -121,12 +128,7 @@
         }
         
     }
-    .btn{
-      margin-top: 4vh;
-      .btnn{
-        margin-right: 0;
-      }
-    }
+    
     .results{
       display: grid;
       grid-template-columns: auto auto auto auto;
