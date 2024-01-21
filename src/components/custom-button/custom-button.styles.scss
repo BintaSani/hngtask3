@@ -1,3 +1,24 @@
+@mixin devices($breakpoint) { //the name of the mixin is devices
+  
+  @if $breakpoint == tiny {    
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media screen and (min-width: 801px) and (max-width: 900px){
+      @content;
+      
+    }
+  }
+  @if $breakpoint == Btablet {
+    @media screen and (min-width: 901px) and (max-width: 1000px){
+      @content;
+      
+    }
+  }
+} 
+
 .custom-button {
     min-width: 165px;
     width: auto;
@@ -17,6 +38,10 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    @include devices(tiny){
+      padding: 0 5px 0 5px;
+      min-width: 100px;
+    }
   
     &:hover {
       background-color: white;
