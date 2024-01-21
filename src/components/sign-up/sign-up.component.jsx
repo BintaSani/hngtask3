@@ -13,7 +13,7 @@ const SignUp = () => {
         email: '',
         password: '',
         confirmPassword: ''
-      });
+    });
     const navigate = useNavigate();
     const {displayName, email, password, confirmPassword} = userCredentials;
     

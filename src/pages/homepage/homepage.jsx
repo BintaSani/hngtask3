@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import {useNavigate} from 'react-router';
 import Preview from '../../components/preview/preview';
 import IMAGE_DATA from '../../context/images/image.data';
 import {ReactComponent as Search} from '../../assets/search.svg';
@@ -18,7 +18,7 @@ const HomePage = ( ) => {
 
     const [data, setData] = useState([]);
     const [search, setSearch] = useState('');
-    
+    const navigate = useNavigate();
 
     setTimeout(() => setLoading(false), 6000);
     const news =IMAGE_DATA;
@@ -51,7 +51,7 @@ const HomePage = ( ) => {
       
             await auth.signOut().then(function() {
               console.log("Successfully signed out.")
-      
+              navigate('/')
             }).catch(function(error) {
               console.log(error)
               console.log("An error occurred")
